@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="content">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="fs-4 fw-semibold">Filmes Populares</h2>
+      </div>
+      <div class="col-12 py-3 d-md-flex">
+        <div class="c-w-md-258" style="min-width: 258px">
+          <app-filter-panel header="Ordernar" class="">...</app-filter-panel>
+          <app-filter-panel header="Onde Assistir" class="my-2"
+            >...</app-filter-panel
+          >
+          <app-filter-panel header="Filtros" class="" [collapsed]="false">
+            <div class="row">
+              <div class="col-12">
+                <p>Gêneros</p>
+              </div>
+              <div class="col-12">
+                <app-gender-button
+                  class="c-fs-14 me-1 mb-2"
+                  *ngFor="let gender of genders; let i = index"
+                  (click)="genderSearh(i, gender.id)"
+                  [isSelected]="gender.selected"
+                  [class]="
+                    gender.selected
+                      ? 'c-bg-color-secondary c-border-color-secondary c-color-white'
+                      : ''
+                  "
+                  >{{ gender.name }}</app-gender-button
+                >
+              </div>
+            </div>
+          </app-filter-panel>
+          <app-button
+            class="w-full fw-semibold mt-3 mb-5"
+            (click)="search()"
+            height="50px"
+            [borderRadius]="50"
+            >Pesquisar</app-button
+          >
+        </div>
+        <div class="flex ms-md-4 row" style="max-width: 1024px">
+          <div
+            *ngFor="let movie of movies"
+            class="col-md mb-4"
+            keyvalue="movie"
+          >
+            <app-card [movie]="movie" />
+          </div>
+          <app-button
+            (click)="loadMorePages()"
+            class="w-full fw-semibold mt-3"
+            height="50px"
+            ><span #loadMorePage>Carregar mais</span></app-button
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

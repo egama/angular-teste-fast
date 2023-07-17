@@ -1,0 +1,41 @@
+
+.name {
+  font-size: 20px;
+}
+@media (max-width: 992px) {
+  .title {
+    font-size: 15px;
+  }
+}
+body {
+  margin:0;
+  background-color: $white;
+  font-family: "Source Sans Pro", Arial;
+  max-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+p,
+span:not(.p-tag-value, .pi),
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+.text-justify {
+  text-align: justify;
+}

@@ -1,0 +1,10 @@
+<button
+  [disabled]="disabled"
+  [type]="type"
+  [class]="'app-button ' + definedClasses"
+  [ngStyle]="{height}"
+  #app_button
+>
+  {{ label }}
+  <ng-content></ng-content>
+</button>

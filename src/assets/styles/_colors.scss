@@ -1,0 +1,88 @@
+@use "./_variables.scss" as bs-color;
+
+$sizes: (
+  "": 0px,
+  "-sm": 576px,
+  "-md": 768px,
+  "-lg": 992px,
+  "-xl": 1200px,
+  "-xxl": 1400px,
+);
+$total-border: 10;
+$total-flex: 10;
+$total-border-radius: 100;
+
+$sides: (
+  "": "",
+  "-bottom": "-bottom",
+  "-top": "-top",
+  "-left": "-left",
+  "-right": "-right",
+);
+
+@each $sizename, $sizevalue in $sizes {
+  @each $name, $value in bs-color.$colors {
+    .c-color#{"" + $sizename}#{"-" + $name} {
+      @media (min-width: $sizevalue) {
+        color: $value !important;
+      }
+    }
+    .c-color-hover#{"" + $sizename}#{"-" + $name}:hover {
+      @media (min-width: $sizevalue) {
+        color: $value !important;
+      }
+    }
+
+    .c-bg-color#{"" + $sizename}#{"-" + $name} {
+      @media (min-width: $sizevalue) {
+        background-color: $value !important;
+      }
+    }
+
+    .c-bg-hover#{"" + $sizename}#{"-" + $name}:hover {
+      @media (min-width: $sizevalue) {
+        background-color: $value !important;
+      }
+    }
+
+    .c-border-color#{"" + $sizename}#{"-" + $name} {
+      @media (min-width: $sizevalue) {
+        border-color: $value !important;
+      }
+    }
+    .c-border-color-hover#{"" + $sizename}#{"-" + $name}:hover {
+      @media (min-width: $sizevalue) {
+        border-color: $value !important;
+      }
+    }
+  }
+
+  @each $side, $sideV in $sides {
+    @for $i from 0 through $total-border {
+      .c-border#{"" + $side}#{"" + $sizename}#{"-" + $i} {
+        @media (min-width: $sizevalue) {
+          border#{"" + $side}-width: #{$i}px;
+          border#{"" + $side}-style: solid;
+        }
+      }
+    }
+  }
+
+  @each $side, $sideV in $sides {
+    @for $i from 0 through $total-border-radius {
+      .c-border-radius#{"" + $sizename}#{"-" + $i} {
+        @media (min-width: $sizevalue) {
+          border-radius: #{$i}px;
+        }
+      }
+    }
+  }
+
+  @for $i from 0 through $total-flex {
+    .c-flex#{"" + $sizename}#{"-" + $i} {
+      @media (min-width: $sizevalue) {
+        flex: $i;
+      }
+    }
+  }
+}

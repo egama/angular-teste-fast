@@ -1,0 +1,22 @@
+$white: #fff;
+$gray: gray;
+$gray1: rgba(0, 0, 0, 0.08);
+$dark: rgb(19, 19, 19);
+$transparent: rgba(0, 0, 0, 0);
+$primary: rgb(3, 37, 65, 1);
+$secondary: rgb(1, 180, 228, 1);
+$tertiary: rgb(144, 206, 161, 1);
+$body: rgb(19, 19, 19);
+
+
+
+$colors: (
+  white: $white,
+  gray: $gray,
+  gray1: $gray1,
+  dark: $dark,
+  primary: $primary,
+  secondary: $secondary,
+  tertiary: $tertiary,
+  body: $body,
+);
