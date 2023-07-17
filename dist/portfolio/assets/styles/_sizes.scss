@@ -1,0 +1,29 @@
+$total-size: 1000;
+$sizes: (
+    "": 0px,
+    '-sm': 576px,
+    '-md': 768px,
+    '-lg': 992px,
+    '-xl': 1200px,
+    '-xxl': 1400px
+
+);
+@each $size, $sizevalue in $sizes {
+    @for $i from 0 through $total-size {
+        @media (min-width: $sizevalue) {
+            .c-h#{"" + $size}-#{$i} {
+                height: #{$i}px;
+            }
+            .c-max-h#{"" + $size}-#{$i} {
+                max-height: #{$i}px;
+            }
+            .c-w#{"" + $size}-#{$i} {
+                width: #{$i}px;
+            }
+            .c-fs#{"" + $size}-#{$i} {
+                font-size: #{$i}px;
+                line-height: #{$i}px;
+            }
+        }
+    }
+}

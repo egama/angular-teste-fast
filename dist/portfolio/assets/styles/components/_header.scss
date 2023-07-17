@@ -1,0 +1,54 @@
+.header {
+  font-family: "Source Sans Pro", Arial;
+  background: $primary;
+  color: $white;
+  font-size: 15px;
+  .nagivation-header {
+    height: 64px;
+    min-height: 64px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  img {
+    height: 20px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header,
+  .navigation-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .header {
+    padding-block: 20px;
+
+  }
+
+  .navigation-header {
+    position: absolute;
+    z-index: 9999;
+    flex-direction: column !important;
+    top: 0;
+    background: $primary;
+    height: 100%;
+    width: 35vw;
+    padding: 1em;
+    margin-left: -100vw;
+    animation-duration: 1s;
+  }
+}
+@keyframes showSidebar {
+  from {
+    margin-left: -100vw;
+  }
+  to {
+    margin-left: -1vw;
+  }
+}

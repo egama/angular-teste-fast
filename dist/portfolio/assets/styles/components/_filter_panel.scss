@@ -1,0 +1,11 @@
+.p-panel {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.p-panel.p-panel-toggleable .p-panel-header {
+  background-color: $white;
+  margin: 0;
+  border-radius: 8px;
+}
+

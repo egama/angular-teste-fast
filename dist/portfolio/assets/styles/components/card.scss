@@ -1,0 +1,65 @@
+.app-card {
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-card {
+  min-width: 150px;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.content-card {
+  min-height: 120px;
+  background-color: $white;
+  border-radius: 0px 0px 8px 8px;
+  padding: 26px 10px 12px;
+  color: $dark;
+}
+
+.content-card p a {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .app-card {
+    display: flex;
+    height: 143px;
+    min-height: 141px;
+  }
+  .image-card {
+    height: 140px;
+    min-height: 141px;
+    min-width: 94px;
+  }
+  .image-card img {
+    border-radius: 8px 0px 0px 8px;
+    height: 141px;
+    max-width: 94px;
+    max-height: 141px;
+  }
+  .content-card {
+    min-height: 120px;
+    border-radius: 0px 0px 8px 8px;
+    padding: 26px 10px 12px;
+    color: $dark;
+  }
+  .description-card {
+    max-height: 60px;
+    overflow: hidden;
+  }
+  .text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
